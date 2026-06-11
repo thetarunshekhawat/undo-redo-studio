@@ -1,0 +1,118 @@
+.footer {
+  margin-top: clamp(60px, 8vw, 120px);
+}
+
+.panel {
+  background: var(--teal);
+  border-radius: var(--radius-section) var(--radius-section) 0 0;
+  color: var(--white);
+  padding: clamp(36px, 4vw, 50px) 0 clamp(40px, 5vw, 70px);
+}
+
+.inner {
+  width: var(--container);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+}
+
+.lead {
+  font-size: clamp(17px, 1.74vw, 25px);
+  line-height: 1.45;
+  max-width: 705px;
+}
+
+.contactList {
+  margin-top: clamp(40px, 6vw, 90px);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  font-size: clamp(15px, 1.39vw, 20px);
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.contactRow svg {
+  flex-shrink: 0;
+}
+.contactRow a:hover {
+  color: var(--mint);
+}
+
+.social {
+  margin-top: clamp(36px, 4vw, 50px);
+}
+
+.socialTitle {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 1.15;
+  font-size: clamp(26px, 2.78vw, 40px);
+  max-width: 515px;
+}
+
+.icons {
+  display: flex;
+  gap: clamp(28px, 5vw, 66px);
+  margin-top: 34px;
+  align-items: center;
+}
+
+.icons a {
+  display: inline-flex;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s;
+}
+.icons a:hover {
+  transform: translateY(-5px) scale(1.12);
+  color: var(--mint);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.mark {
+  width: clamp(120px, 14vw, 201px);
+  opacity: 0.95;
+}
+
+.rightLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 18px;
+  font-size: clamp(15px, 1.39vw, 20px);
+}
+.rightLinks a:hover {
+  color: var(--mint);
+}
+
+.end {
+  background: var(--mint);
+  color: var(--teal);
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 9px 16px;
+}
+
+@media (max-width: 760px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+  .right {
+    align-items: flex-start;
+    gap: 28px;
+  }
+  .rightLinks {
+    align-items: flex-start;
+  }
+}

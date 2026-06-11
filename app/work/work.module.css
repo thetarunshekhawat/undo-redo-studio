@@ -1,0 +1,98 @@
+/* Mint hero band — "undo doubts / redo results" lockup */
+.hero {
+  background: var(--mint);
+  padding: clamp(40px, 5vw, 76px) 0 clamp(44px, 5vw, 80px);
+  overflow: hidden;
+}
+
+.lockup {
+  width: var(--container);
+  margin-inline: auto;
+  font-size: clamp(34px, 5.9vw, 85px);
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.lockupRow {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.6vw, 38px);
+}
+.lockupRow + .lockupRow {
+  margin-left: clamp(40px, 9vw, 130px);
+}
+
+.word-orange {
+  color: var(--orange);
+}
+.word-teal {
+  color: var(--teal);
+}
+.bely {
+  font-family: var(--font-display);
+}
+
+.arrowGlyph {
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+/* Case studies */
+.case {
+  padding-top: clamp(48px, 6vw, 90px);
+}
+
+.caseTitle {
+  text-align: center;
+  color: var(--ink);
+}
+
+.caseTagline {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: clamp(15px, 1.74vw, 25px);
+  margin-top: 12px;
+}
+
+.caseImage {
+  margin-top: clamp(28px, 3vw, 46px);
+  width: 100%;
+}
+.caseImage img {
+  width: 100%;
+  height: auto;
+  max-height: 805px;
+  object-fit: cover;
+}
+
+.caseMeta {
+  width: var(--container);
+  margin: clamp(32px, 4vw, 56px) auto 0;
+  display: grid;
+  grid-template-columns: minmax(0, 430px) minmax(0, 570px);
+  justify-content: space-between;
+  gap: 32px;
+  font-size: clamp(15px, 1.39vw, 20px);
+  line-height: 1.45;
+}
+
+.metaList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.divider {
+  height: 9px;
+  background: var(--mint);
+  margin-top: clamp(48px, 6vw, 90px);
+}
+
+@media (max-width: 760px) {
+  .caseMeta {
+    grid-template-columns: 1fr;
+  }
+  .lockupRow + .lockupRow {
+    margin-left: 12vw;
+  }
+}

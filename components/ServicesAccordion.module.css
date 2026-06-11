@@ -1,0 +1,51 @@
+.row {
+  width: 100%;
+}
+.mint {
+  background: var(--mint);
+  color: var(--teal);
+}
+.teal {
+  background: var(--teal);
+  color: var(--mint);
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: clamp(22px, 2.78vw, 40px);
+  text-transform: uppercase;
+  padding: 35px var(--gutter);
+  text-align: left;
+}
+
+.panel {
+  overflow: hidden;
+}
+
+.panelInner {
+  padding: 0 var(--gutter) 35px;
+}
+
+.rule {
+  border: none;
+  border-top: 1px solid currentColor;
+  margin-bottom: 28px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: clamp(15px, 1.39vw, 20px);
+  line-height: 1.45;
+}

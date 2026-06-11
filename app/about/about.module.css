@@ -1,0 +1,188 @@
+/* Teal hero band — "WE ARE THE innovators/disruptors/storytellers" */
+.hero {
+  background: var(--teal);
+  color: var(--white);
+  padding: clamp(44px, 5vw, 64px) 0 clamp(48px, 5.5vw, 80px);
+}
+
+.kicker {
+  font-size: clamp(20px, 2.78vw, 40px);
+  text-transform: uppercase;
+}
+
+.heroTicker {
+  display: block;
+  margin-top: 8px;
+  margin-left: clamp(40px, 8.3vw, 120px);
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.9vw, 85px);
+  text-transform: uppercase;
+}
+
+/* Story: photo + "we did a lil' thing" */
+.story {
+  display: grid;
+  grid-template-columns: minmax(0, 568px) minmax(0, 542px);
+  justify-content: space-between;
+  gap: 40px;
+  padding-top: clamp(44px, 5vw, 72px);
+}
+
+.storyPhoto {
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+.storyPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.storyText {
+  font-size: clamp(15px, 1.39vw, 20px);
+  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.storyText strong {
+  font-weight: 700;
+}
+
+/* Founders */
+.doersHeading {
+  margin-top: clamp(56px, 7vw, 110px);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.18em;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.47vw, 50px);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.founderCard {
+  position: relative;
+  background: var(--cream);
+  border-radius: var(--radius-card);
+  margin-top: clamp(28px, 3vw, 46px);
+  padding: clamp(24px, 3.2vw, 47px);
+  display: grid;
+  grid-template-columns: minmax(0, 477px) minmax(0, 477px);
+  justify-content: space-between;
+  gap: clamp(24px, 3vw, 50px);
+  overflow: hidden;
+}
+
+.founderPhoto {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+.founderPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.founderName {
+  font-weight: 600;
+  font-size: clamp(18px, 1.74vw, 25px);
+}
+.founderRole {
+  font-weight: 600;
+  font-size: clamp(16px, 1.74vw, 25px);
+  margin-top: 6px;
+}
+.founderBio {
+  margin-top: 22px;
+  font-size: clamp(15px, 1.39vw, 20px);
+  line-height: 1.45;
+}
+
+.watermark {
+  position: absolute;
+  width: 420px;
+  opacity: 0.35;
+  pointer-events: none;
+  color: var(--white);
+}
+
+/* WE'RE DIFFERENT */
+.diffHeading {
+  margin-top: clamp(56px, 7vw, 110px);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3em;
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.78vw, 40px);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.diffTicker {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--orange);
+  font-size: clamp(26px, 2.85vw, 41px);
+}
+
+.diffRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: clamp(28px, 3vw, 50px);
+}
+
+.diffCard {
+  background: var(--cream);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-card);
+  padding: 26px;
+  min-height: 385px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.diffCard:hover {
+  transform: translateY(-8px) rotate(0.6deg);
+}
+
+.diffIllo {
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+.diffIllo img {
+  max-height: 150px;
+  width: auto;
+  mix-blend-mode: multiply;
+}
+
+.diffTitle {
+  font-weight: 600;
+  font-size: clamp(16px, 1.39vw, 20px);
+  margin-top: 10px;
+}
+.diffBody {
+  font-size: clamp(15px, 1.39vw, 20px);
+  line-height: 1.45;
+  margin-top: 14px;
+}
+
+@media (max-width: 860px) {
+  .story,
+  .founderCard {
+    grid-template-columns: 1fr;
+  }
+  .diffRow {
+    grid-template-columns: 1fr;
+  }
+  .founderReverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

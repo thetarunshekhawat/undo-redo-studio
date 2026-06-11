@@ -1,0 +1,149 @@
+.hero {
+  padding-top: clamp(32px, 3.2vw, 45px);
+}
+
+.heroTitle {
+  font-weight: 600;
+  font-size: clamp(22px, 2.78vw, 40px);
+  text-transform: uppercase;
+}
+
+/* mint process collage */
+.processWrap {
+  position: relative;
+  margin-top: clamp(28px, 3vw, 44px);
+}
+
+.processTag {
+  display: inline-block;
+  background: var(--mint);
+  color: var(--teal);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.78vw, 40px);
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 14px 38px;
+}
+
+.processBoard {
+  position: relative;
+  background: var(--mint);
+  border-radius: 30px;
+  margin-top: 28px;
+  min-height: clamp(260px, 24vw, 340px);
+  overflow: hidden;
+}
+
+.floatPill {
+  position: absolute;
+  border: 2px solid var(--ink);
+  border-radius: 50px;
+  padding: 0.25em 0.75em;
+  font-size: clamp(15px, 2.78vw, 40px);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ink);
+  background: transparent;
+}
+
+.simplify {
+  margin-top: clamp(36px, 4.5vw, 66px);
+  font-weight: 600;
+  font-size: clamp(22px, 2.78vw, 40px);
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+/* cream "how things go down" band */
+.creamBand {
+  background: var(--cream);
+  border-radius: var(--radius-section) var(--radius-section) 0 0;
+  margin-top: clamp(36px, 4vw, 56px);
+  padding: clamp(36px, 4vw, 56px) 0 clamp(44px, 5vw, 72px);
+}
+
+.howTitle {
+  font-weight: 600;
+  font-size: clamp(22px, 2.78vw, 40px);
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.howLogo {
+  height: clamp(48px, 6.7vw, 96px);
+  width: auto;
+  margin-top: 14px;
+}
+
+.howCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: clamp(28px, 3vw, 46px);
+}
+
+.howCard {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-card);
+  padding: 26px;
+  min-height: 270px;
+  transition: background-color 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.howCard:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: translateY(-6px);
+}
+
+.howCardTitle {
+  font-weight: 600;
+  font-size: clamp(16px, 1.39vw, 20px);
+  text-transform: uppercase;
+}
+.howCardBody {
+  margin-top: 50px;
+  font-size: clamp(15px, 1.39vw, 20px);
+  line-height: 1.45;
+}
+
+/* what we un/re do heading */
+.menuHeading {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3em;
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.78vw, 40px);
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: clamp(44px, 5vw, 72px) 0 clamp(24px, 2.6vw, 38px);
+}
+.menuHeadingTicker {
+  color: var(--orange);
+}
+
+.cta {
+  text-align: center;
+  margin-top: clamp(44px, 5vw, 65px);
+}
+.ctaTitle {
+  font-weight: 600;
+  font-size: clamp(20px, 2.78vw, 40px);
+  text-transform: uppercase;
+}
+.ctaBtn {
+  margin-top: 30px;
+}
+
+@media (max-width: 860px) {
+  .howCards {
+    grid-template-columns: 1fr;
+  }
+  .howCard {
+    min-height: 0;
+  }
+  .howCardBody {
+    margin-top: 18px;
+  }
+  .processBoard {
+    min-height: 420px;
+  }
+}

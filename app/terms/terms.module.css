@@ -1,0 +1,32 @@
+.title {
+  color: var(--teal);
+  padding-top: clamp(32px, 3.6vw, 50px);
+}
+
+.updated {
+  margin-top: clamp(24px, 3vw, 46px);
+  font-size: clamp(15px, 1.74vw, 25px);
+}
+
+.band {
+  background: var(--teal);
+  color: var(--white);
+  margin-top: clamp(28px, 3vw, 44px);
+  padding: 17px 0;
+  font-size: clamp(18px, 1.74vw, 25px);
+  text-transform: uppercase;
+}
+
+.bandInner {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+.body {
+  margin-top: clamp(24px, 2.6vw, 38px);
+  font-size: clamp(15px, 1.74vw, 25px);
+  line-height: 1.45;
+}
+.body + .body {
+  margin-top: 22px;
+}

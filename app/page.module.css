@@ -1,142 +1,256 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
+/* ---------------- HERO ---------------- */
+.hero {
+  position: relative;
+  background: var(--white);
+  min-height: clamp(420px, 38vw, 552px);
   display: flex;
-  flex: 1;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
 }
 
-.main {
-  display: flex;
-  flex: 1;
+.heroInner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
   width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+.heroKicker {
+  font-size: clamp(18px, 2.78vw, 40px);
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.heroTicker {
+  margin-top: 15px;
+  font-family: var(--font-display);
+  font-size: clamp(38px, 5.9vw, 85px);
+  text-transform: uppercase;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+.heroCorner {
+  position: absolute;
+  bottom: 22px;
+  z-index: 2;
+  color: var(--white);
+  font-size: clamp(13px, 1.39vw, 20px);
+  text-transform: uppercase;
+  cursor: default;
+  transition: color 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.heroCorner:hover {
+  color: var(--orange);
+  transform: scale(1.25);
+}
+.cornerLeft {
+  left: clamp(20px, 8.5vw, 123px);
+}
+.cornerRight {
+  right: clamp(20px, 8.5vw, 123px);
 }
 
-.intro a {
+/* ---------------- TEAL INTRO BAND ---------------- */
+.tealBand {
+  position: relative;
+  background: var(--teal);
+  padding: clamp(56px, 6vw, 88px) 0 clamp(120px, 12vw, 180px);
+  overflow: hidden;
+}
+
+.tealBlob {
+  position: absolute;
+  left: -120px;
+  top: 40%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--orange);
+  opacity: 0.85;
+}
+
+.tealCopy {
+  position: relative;
+  color: var(--white);
+  text-align: center;
   font-weight: 500;
-  color: var(--text-primary);
+  font-size: clamp(17px, 1.74vw, 25px);
+  line-height: 1.5;
+  max-width: 1031px;
+  margin-inline: auto;
 }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+/* ---------------- FEATURED (white rounded over teal) ---------------- */
+.featured {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-section) var(--radius-section) 0 0;
+  margin-top: clamp(-120px, -8vw, -90px);
+  padding: clamp(36px, 4vw, 56px) 0 clamp(56px, 6vw, 90px);
 }
 
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
+.featuredCard {
+  background: var(--cream);
+  border-radius: var(--radius-card);
+  margin-top: clamp(40px, 6vw, 90px);
+  padding: clamp(24px, 5vw, 71px) clamp(24px, 4.8vw, 70px) clamp(28px, 3vw, 44px);
+}
+
+.picRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.pic {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  aspect-ratio: 500 / 475;
   cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+}
+.pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 75% center; /* portfolio slides carry their photo on the right */
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.picOverlay {
+  position: absolute;
+  inset: 0;
+  background: var(--mint);
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 2.78vw, 40px);
+  text-transform: uppercase;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.featuredMeta {
+  text-align: center;
+  margin-top: clamp(28px, 3.5vw, 48px);
+}
+.featuredName {
+  font-weight: 700;
+  font-size: clamp(18px, 1.74vw, 25px);
+  text-transform: uppercase;
+}
+.featuredServices {
+  margin-top: 9px;
+  font-size: clamp(17px, 2.08vw, 30px);
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.squiggle {
+  position: absolute;
+  color: var(--orange);
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
+.exploreWrap {
+  text-align: center;
+  margin-top: clamp(28px, 3vw, 46px);
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+/* ---------------- BLACK SERVICES SECTION ---------------- */
+.black {
+  background: var(--ink);
+  padding: clamp(40px, 4vw, 60px) 0 clamp(56px, 5vw, 84px);
+  color: var(--white);
+}
+
+.whatWeDo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35em;
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.78vw, 40px);
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.cardsRow1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: clamp(36px, 5vw, 68px);
+}
+
+.cardsRow2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-top: 28px;
+}
+
+.svcCard {
+  border-radius: var(--radius-card);
+  aspect-ratio: 570 / 410;
+  padding: 37px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--ink);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.svcCard:hover {
+  transform: translateY(-10px) rotate(-0.5deg);
+}
+.svcSmall {
+  aspect-ratio: 370 / 410;
+}
+
+.svcTitleDisplay {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.47vw, 50px);
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+.svcTitle {
+  font-weight: 600;
+  font-size: clamp(24px, 2.78vw, 40px);
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+/* ---------------- COLLABORATORS ---------------- */
+.collab {
+  background: var(--white);
+  padding: clamp(36px, 4vw, 50px) 0 clamp(20px, 2vw, 30px);
+  color: var(--ink);
+}
+
+.collabStrip {
+  margin-top: clamp(30px, 4vw, 70px);
+  padding-block: 20px;
+}
+
+.collabLogo {
+  color: var(--grey-logo);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.4vw, 34px);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .picRow {
+    grid-template-columns: 1fr;
   }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .cardsRow1,
+  .cardsRow2 {
+    grid-template-columns: 1fr;
+  }
+  .svcCard,
+  .svcSmall {
+    aspect-ratio: auto;
+    min-height: 240px;
+    gap: 50px;
+  }
+  .tealBlob {
+    display: none;
   }
 }

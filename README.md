@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Studio UNDO/REDO — Website
 
-## Getting Started
+Official website for **Studio UNDO/REDO**, a creative design studio that hits CTRL+Z on the ordinary and CTRL+SHIFT+Z into groundbreaking ideas.
 
-First, run the development server:
+**Live site:** _link coming soon_
+
+---
+
+## Tech Stack
+
+| Tool | Purpose |
+|---|---|
+| [Next.js 16](https://nextjs.org) | Framework |
+| [React 19](https://react.dev) | UI |
+| [TypeScript](https://typescriptlang.org) | Language |
+| [Framer Motion](https://www.framer.com/motion/) | Animations |
+| [Lenis](https://lenis.darkroom.engineering/) | Smooth scroll |
+
+---
+
+## Running Locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to Update Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| What | Where |
+|------|-------|
+| Add / edit a project | `data/projects.ts` — one entry per project. Images go in `public/assets/projects/`. |
+| Page copy / text | Page files: `app/page.tsx` (home), `app/about/page.tsx`, `app/services/page.tsx`, `app/contact/page.tsx` |
+| Services list | `components/ServicesAccordion.tsx` (the `ITEMS` array) |
+| Colours / fonts / spacing | `app/globals.css` `:root` tokens |
+| Contact details & social links | `components/Footer.tsx` |
+| Nav links | `components/NavBar.tsx` (the `LINKS` array) |
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Heading Font (Bely Display)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The design uses **Bely Display** (a licensed TypeTogether font). Drop the files here to activate it — no code changes needed:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+public/fonts/BelyDisplay-Regular.woff2
+public/fonts/BelyDisplay-Regular.woff
+```
 
-## Deploy on Vercel
+Until then, Abril Fatface (Google Fonts) stands in as a fallback.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+```
+app/              Pages (Next.js App Router) + global styles
+components/       NavBar, Footer, WordTicker, ArrowHeading,
+                  Marquee, GradientBlobs, ServicesAccordion,
+                  Reveal, LenisProvider
+data/projects.ts  The one file to edit when adding new work
+public/assets/    Images (brand, founders, illustrations, projects)
+public/fonts/     Drop BelyDisplay-Regular.woff2 here
+```
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE).
