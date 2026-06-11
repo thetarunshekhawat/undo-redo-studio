@@ -2,7 +2,7 @@
 
 Official website for **Studio UNDO/REDO**, a creative design studio that hits CTRL+Z on the ordinary and CTRL+SHIFT+Z into groundbreaking ideas.
 
-**Live site:** _link coming soon_
+**Live site:** https://undo-redo-site.vercel.app
 
 ---
 
