@@ -1,73 +1,41 @@
-# Studio UNDO/REDO — Website
+# Studio Undo/Redo — 2026 redesign
 
-Official website for **Studio UNDO/REDO**, a creative design studio that hits CTRL+Z on the ordinary and CTRL+SHIFT+Z into groundbreaking ideas.
+A local redesign of the connected Studio Undo/Redo Next.js repository. Built with Next.js App Router, Framer Motion and Lenis. No deployment or GitHub push has been performed.
 
-**Live site:** https://undo-redo-site.vercel.app
+## Run locally
 
----
-
-## Tech Stack
-
-| Tool | Purpose |
-|---|---|
-| [Next.js 16](https://nextjs.org) | Framework |
-| [React 19](https://react.dev) | UI |
-| [TypeScript](https://typescriptlang.org) | Language |
-| [Framer Motion](https://www.framer.com/motion/) | Animations |
-| [Lenis](https://lenis.darkroom.engineering/) | Smooth scroll |
-
----
-
-## Running Locally
-
-```bash
-npm install
-npm run dev      # http://localhost:3000
-npm run build    # production build
+```sh
+npm ci
+npm run dev -- --hostname 127.0.0.1 --port 3000
 ```
 
----
+Open http://localhost:3000. Production validation: `npm run build`.
 
-## How to Update Content
+## Content
 
-| What | Where |
-|------|-------|
-| Add / edit a project | `data/projects.ts` — one entry per project. Images go in `public/assets/projects/`. |
-| Page copy / text | Page files: `app/page.tsx` (home), `app/about/page.tsx`, `app/services/page.tsx`, `app/contact/page.tsx` |
-| Services list | `components/ServicesAccordion.tsx` (the `ITEMS` array) |
-| Colours / fonts / spacing | `app/globals.css` `:root` tokens |
-| Contact details & social links | `components/Footer.tsx` |
-| Nav links | `components/NavBar.tsx` (the `LINKS` array) |
+- `data/portfolio.ts`: 24 project entries and galleries, including the new portfolio and three earlier projects.
+- `data/studio.ts`: the six service groups and original portfolio URL.
+- `public/assets/portfolio`: original supplied portfolio artwork, compressed to WebP and MP4.
+- `public/assets/founders`: founder photographs from the existing repository.
+- `public/fonts`: self-hosted DM Sans.
 
----
+## Sources
 
-## Heading Font (Bely Display)
+- New 103-slide portfolio: https://docs.google.com/presentation/d/1gShb_ijqnk_PM9ulQQAXmXsMMrI8JF8S7pwvLfEkpcs/edit
+- Existing website: https://new-undo-redo-studio-website.vercel.app
+- Existing repository: https://github.com/thetarunshekhawat/undo-redo-studio
+- Motion reference: https://www.aardvarkbookclub.com
 
-The design uses **Bely Display** (a licensed TypeTogether font). Drop the files here to activate it — no code changes needed:
+The new deck is a working document. Draft annotations and alternative copy are excluded. Founder biographies and contact details come from the existing repository. Project descriptions summarize the supplied portfolio. Older work remains available in the archive.
 
-```
-public/fonts/BelyDisplay-Regular.woff2
-public/fonts/BelyDisplay-Regular.woff
-```
+## Interactions
 
-Until then, Abril Fatface (Google Fonts) stands in as a fallback.
+Opening curtain, floating hero collage, scroll parallax, spring card tilt, animated project previews on hover/focus, scroll reveals, smooth scrolling, filter transitions, mobile navigation and service accordions. A footer control pauses motion, stores the preference locally and respects the operating system’s reduced-motion setting. Videos play only while visible.
 
----
+## Contact and films
 
-## Project Structure
+The contact form prepares an email draft in the visitor’s email app. It does not claim to send mail or use a backend. Asian Paints films link to the original Instagram reels supplied in the deck; the studio’s GIF animations are hosted locally as compressed video.
 
-```
-app/              Pages (Next.js App Router) + global styles
-components/       NavBar, Footer, WordTicker, ArrowHeading,
-                  Marquee, GradientBlobs, ServicesAccordion,
-                  Reveal, LenisProvider
-data/projects.ts  The one file to edit when adding new work
-public/assets/    Images (brand, founders, illustrations, projects)
-public/fonts/     Drop BelyDisplay-Regular.woff2 here
-```
+## Asset processing
 
----
-
-## License
-
-MIT — see [LICENSE](LICENSE).
+The research exports and full-resolution originals are kept outside the repository at `/tmp/undo-redo-research`. The import scripts document how assets were recovered from Google Slides. Signed Google asset URLs are not embedded in the website. Optimized portfolio assets total approximately 17 MB; loading is lazy except for the first viewport.

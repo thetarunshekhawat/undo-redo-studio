@@ -1,0 +1,7 @@
+'use client';
+import {useState} from 'react';
+import {motion,AnimatePresence} from 'framer-motion';
+import {portfolio} from '@/data/portfolio';
+import {portfolioUrl} from '@/data/studio';
+import ProjectCard from './ProjectCard';
+export default function WorkArchive(){const[filter,setFilter]=useState('All work');const categories=['All work','Branding','Packaging','Art direction','Social & digital'];const filtered=portfolio.filter(p=>filter==='All work'||p.category===filter);return <section className="work-archive section-pad"><div className="filters" aria-label="Filter projects">{categories.map(category=><button key={category} aria-pressed={category===filter} onClick={()=>setFilter(category)}>{category}<span>{category==='All work'?portfolio.length:portfolio.filter(p=>p.category===category).length}</span></button>)}</div><p className="sr-only" aria-live="polite">Showing {filtered.length} projects</p><motion.div layout className="project-grid"><AnimatePresence mode="popLayout">{filtered.map((p)=><motion.div layout key={p.slug} initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} exit={{opacity:0,scale:.94}} transition={{duration:.4}}><ProjectCard project={p} index={portfolio.indexOf(p)}/></motion.div>)}</AnimatePresence></motion.div><div className="archive-bottom"><a href={portfolioUrl} target="_blank" rel="noreferrer">Take a look through our full 2026 portfolio ↗</a></div></section>}
